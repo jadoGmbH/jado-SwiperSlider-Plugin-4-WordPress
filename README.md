@@ -3,23 +3,26 @@
 
 A WordPress Plugin that turns a Gallery-Block into a SwiperSlider. 
 
-Keyfeature: Only output scripts/styles on page with Gallery-Blocks including slideshow activated
+Keyfeature: Only output scripts/styles on post/page with Gallery-Block including slideshow activated
 
 
 
-With many options:
+<h2>With many options:</h2>
 
-Navigation: Bulltes or numbers or none
-Slides per View: type 'auto' or any number
-Allow Keybord Control: to give access to the arrows of your keyboard to navigate
-Animation Speed: Add Number to edit speed - default is 400ms
-Behavior: Slide (default), Cube, Fade, Cards or Coverflow
-Lazyload: for loading a huge amount of slides
-Autoplay: Autoplay slides and set duration for them
-Auto Height: auto height of slider
-Loop: Loop trough the slideshows
-Space between: Set Space between slides
-Navigation Color: Set Color for navigation Elements
+<ul>
 
+<li>Navigation: Bulltes or numbers or none</li>
+<li>Slides per View: type 'auto' or any number</li>
+<li>Allow Keybord Control: to give access to the arrows of your keyboard to navigate</li>
+<li>Animation Speed: Add Number to edit speed - default is 400ms</li>
+<li>Behavior: Slide (default), Cube, Fade, Cards or Coverflow</li>
+<li>Lazyload: for loading a huge amount of slides</li>
+<li>Autoplay: Autoplay slides and set duration for them</li>
+<li>Auto Height: auto height of slider</li>
+<li>Loop: Loop trough the slideshows</li>
+<li>Space between: Set Space between slides</li>
+<li>Navigation Color: Set Color for navigation Elements</li>
+
+</ul>
 
 For better Documentation please have a look at https://swiperjs.com
