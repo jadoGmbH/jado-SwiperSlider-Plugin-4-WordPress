@@ -1,4 +1,4 @@
-# jado-SwiperSlider
+# ja.do Swiper Slider Wordpress Plugin
 
 
 A WordPress Plugin that turns a Gallery-Block into a SwiperSlider. 
