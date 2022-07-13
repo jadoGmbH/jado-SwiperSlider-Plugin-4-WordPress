@@ -1,13 +1,14 @@
 //  ja.do custom style
 
-.swiper-item{
-  width: 100% !important;
-  margin-bottom: 0;
 
-  img{
-    width: 100% !important;
+.wp-block-gallery{
+  overflow: hidden;
+
+  .swiper-slide{
+    margin-bottom: 0;
+
+    img{
+      margin-bottom: 0 !important;
+    }
   }
-}
-
-.swiper-button-prev, .swiper-button-next{
 }
