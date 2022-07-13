@@ -3,7 +3,7 @@
 
 A WordPress Plugin that turns a Gallery-Block into a SwiperSlider. 
 
-Keyfeature: Only output scripts/styles on post/page with Gallery-Block including slideshow activated
+<h3>Key Feature: Only output scripts/styles on post/page with Gallery-Block including slideshow activated</h3>
 
 
 
