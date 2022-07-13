@@ -11,7 +11,7 @@ Keyfeature: Only output scripts/styles on post/page with Gallery-Block including
 
 <ul>
 
-<li>Navigation: Bulltes or numbers or none</li>
+<li>Navigation: <strong>Bullets or numbers or none</strong></li>
 <li>Slides per View: type 'auto' or any number</li>
 <li>Allow Keybord Control: to give access to the arrows of your keyboard to navigate</li>
 <li>Animation Speed: Add Number to edit speed - default is 400ms</li>
