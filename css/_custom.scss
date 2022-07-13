@@ -1,12 +1,31 @@
 //  ja.do custom style
 
-
 .wp-block-gallery{
-  overflow: hidden;
+  &.swiper-initialized{
+    overflow: hidden;
+    margin: 0;
+    position: relative;
 
+
+    figcaption{
+
+      &.blocks-gallery-caption{
+        position: absolute;
+        z-index: 12;
+        top: 0;
+        width: 100%;
+        display: block;
+      }
+
+
+    }
+  }
   .swiper-slide{
     margin-bottom: 0;
 
+    figcaption{
+      padding-bottom: 2em !important;
+    }
     img{
       margin-bottom: 0 !important;
     }
