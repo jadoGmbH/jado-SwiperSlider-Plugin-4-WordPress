@@ -1,5 +1,4 @@
 <?php
-
 add_action('wp_footer', 'ts_scripte');
 function ts_scripte()
 {
@@ -16,9 +15,7 @@ function ts_scripte()
         $tsLoop = get_post_meta(get_the_ID(), 'ts_options_loop', true);
         $tsGutter = get_post_meta(get_the_ID(), 'ts_options_gutter', true);
         $tsAutoHeight = get_post_meta(get_the_ID(), 'ts_options_auto-height', true);
-        
         ?>
-
         <script src='<?php echo plugin_dir_url(__FILE__) . '../js/swiper-min.js'; ?>'></script>
         <script>
             window.onload = function () {
@@ -29,17 +26,14 @@ function ts_scripte()
                 loadStyle.type = 'text/css';
                 let linkInput = document.getElementsByTagName('link')[0];
                 linkInput.parentNode.insertBefore(loadStyle, linkInput);
-
                 const swiperElem = '<div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
                 org_gal = document.querySelector('.wp-block-gallery').innerHTML;
                 new_gal = "<div class='swiper-wrapper'>" + org_gal + "</div>";
                 document.querySelector('.wp-block-gallery').innerHTML = new_gal + swiperElem;
-
                 let imageItems = document.querySelectorAll('.wp-block-image');
                 for (let i = 0; i < imageItems.length; i++) {
                     imageItems[i].classList.add('swiper-slide');
                 }
-
                 const swiper = new Swiper('.wp-block-gallery', {
                     <?php if ($tsAnimationSpeed == '') {
                         echo 'speed: 400,';
@@ -95,27 +89,20 @@ function ts_scripte()
                         echo 'autoHeight: true,';
                     }
                     ?>
-
-
                     // hashNavigation: {
                     //     watchState: true,
                     // },
-
                     navigation: {
                         nextEl: ".swiper-button-next",
                         prevEl: ".swiper-button-prev",
                     },
                 });
-
-
             };
         </script>
         <?php
-
         $tsNavigationColor = get_post_meta(get_the_ID(), 'ts_options_navigation-color', true);
         if($tsNavigationColor != ''){
                 echo '<style>:root {--swiper-theme-color: ' . $tsNavigationColor . ';}</style>';
         }
-
     };
 }
