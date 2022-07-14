@@ -27,9 +27,13 @@ function ts_scripte()
                 let linkInput = document.getElementsByTagName('link')[0];
                 linkInput.parentNode.insertBefore(loadStyle, linkInput);
                 const swiperElem = '<div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
-                org_gal = document.querySelector('.wp-block-gallery').innerHTML;
-                new_gal = "<div class='swiper-wrapper'>" + org_gal + "</div>";
-                document.querySelector('.wp-block-gallery').innerHTML = new_gal + swiperElem;
+                let galleries = document.querySelectorAll('.wp-block-gallery');
+                for (let i = 0; i < galleries.length; i++) {
+                    galleries[i].classList.add('test');
+                    org_gal = galleries[i].innerHTML;
+                    new_gal = "<div class='swiper-wrapper'>" + org_gal + "</div>";
+                    galleries[i].innerHTML = new_gal + swiperElem;
+                }
                 let imageItems = document.querySelectorAll('.wp-block-image');
                 for (let i = 0; i < imageItems.length; i++) {
                     imageItems[i].classList.add('swiper-slide');

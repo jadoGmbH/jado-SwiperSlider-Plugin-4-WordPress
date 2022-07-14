@@ -6,9 +6,7 @@
     margin: 0;
     position: relative;
 
-
     figcaption{
-
       &.blocks-gallery-caption{
         position: absolute;
         z-index: 12;
@@ -16,8 +14,6 @@
         width: 100%;
         display: block;
       }
-
-
     }
   }
   .swiper-slide{
@@ -30,4 +26,14 @@
       margin-bottom: 0 !important;
     }
   }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 0 !important;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  top: 45% !important;
+  border: none;
+  outline: none;
 }
