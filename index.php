@@ -2,7 +2,7 @@
 /*
 Plugin Name: ja.do Swiper Plugin
 Plugin URI: https://www.ja.do/
-Description: Plugin 4 SwiperJS Slider
+Description: Plugin for SwiperJS - transfers gallery-block into SwiperJS
 Version: 1.0.3
 Author: ja.do GmbH
 Author URI: https://www.ja.do/
