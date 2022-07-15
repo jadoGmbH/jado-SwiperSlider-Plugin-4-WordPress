@@ -34,7 +34,7 @@ function ts_scripte()
                     new_gal = "<div class='swiper-wrapper'>" + org_gal + "</div>";
                     galleries[i].innerHTML = new_gal + swiperElem;
                 }
-                let imageItems = document.querySelectorAll('.wp-block-image');
+                let imageItems = document.querySelectorAll('.wp-block-gallery .wp-block-image');
                 for (let i = 0; i < imageItems.length; i++) {
                     imageItems[i].classList.add('swiper-slide');
                 }
