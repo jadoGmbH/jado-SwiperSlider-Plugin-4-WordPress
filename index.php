@@ -14,7 +14,7 @@ Text Domain: jado
 function jado_ts_function() {
 
     class TinySlider_Options {
-        private $config = '{"title":"Swiper Slider Options","prefix":"ts_options_","domain":"ts-options","class_name":"Swiper_Options","post-type":["post","page"],"context":"normal","priority":"default","fields":[{"type":"checkbox","label":"Swiper on this page","description":"transfer all Gallery-Blocks into a Swiper Slider","id":"ts_options_activate-tiny-slider-on-this-page"},{"type":"select","label":"Navigation (Bullets / Numbers)","default":"none","options":"none : None\r\nbullets : Bullets\r\nnumbers : Numbers","id":"ts_options_navigation"},{"type":"text","label":"Slides per View (auto / num)","default":"1","max":"7","min":"1","step":"1","id":"ts_options_how-much-slides-in-viewport"},{"type":"checkbox","label":"Allow Keyboard Control","checked":"1","id":"ts_options_show-navigation-arrows"},{"type":"number","label":"Animation Speed (ms)","default":"400","max":"10000","min":"100","id":"ts_options_animation-speed-ms"},{"type":"select","label":"Behavior","default":"slide","options":"slide : Slide\r\ncube : Cube\r\nfade : Fade\r\ncards : Cards\r\ncoverflow : Coverflow","id":"ts_options_behavior"},{"type":"checkbox","label":"Lazyload","id":"ts_options_lazyload"},{"type":"checkbox","label":"Autoplay","id":"ts_options_autoplay"},{"type":"number","label":"Autoplay Duration (ms)","default":"1000","max":"30000","min":"10","id":"ts_options_autoplayduration"},{"type":"checkbox","label":"Auto Height","checked":"1","id":"ts_options_auto-height"},{"type":"checkbox","label":"Loop","checked":"1","id":"ts_options_loop"},{"type":"number","label":"Space between","max":"1000","min":"1","step":"1","id":"ts_options_gutter"},{"type":"color","label":"Navigation Color","default":"#000000","color-picker":"1","id":"ts_options_navigation-color"}]}';
+        private $config = '{"title":"Swiper Slider Options","prefix":"ts_options_","domain":"ts-options","class_name":"Swiper_Options","post-type":["post","page"],"context":"normal","priority":"default","fields":[{"type":"checkbox","label":"Swiper on this page","description":"activate all gallery-blocks as Swiper","id":"ts_options_activate-tiny-slider-on-this-page"},{"type":"select","label":"Navigation","default":"none","options":"none : None\r\nbullets : Bullets\r\nnumbers : Numbers","id":"ts_options_navigation"},{"type":"text","label":"Slides per View (auto / num)","default":"1","max":"7","min":"1","step":"1","id":"ts_options_how-much-slides-in-viewport"},{"type":"checkbox","label":"Allow keyboard control","checked":"1","id":"ts_options_show-navigation-arrows"},{"type":"number","label":"Animation speed (ms)","default":"400","max":"10000","min":"100","id":"ts_options_animation-speed-ms"},{"type":"select","label":"Behavior","default":"slide","options":"slide : Slide\r\ncube : Cube\r\nfade : Fade\r\ncards : Cards\r\ncoverflow : Coverflow","id":"ts_options_behavior"},{"type":"color","label":"Navigation/UI color","default":"#000000","color-picker":"1","id":"ts_options_navigation-color"},{"type":"checkbox","label":"Autoplay","id":"ts_options_autoplay"},{"type":"number","label":"Autoplay duration (ms)","default":"1000","max":"30000","min":"10","id":"ts_options_autoplayduration"},{"type":"checkbox","label":"Auto height","checked":"1","id":"ts_options_auto-height"},{"type":"checkbox","label":"Loop","checked":"1","id":"ts_options_loop"},{"type":"number","label":"Space between","max":"1000","min":"1","step":"1","id":"ts_options_gutter"},{"type":"checkbox","label":"Lazyload","id":"ts_options_lazyload"}]}';
 
 
         public function __construct() {
@@ -222,12 +222,27 @@ add_action( 'init', 'jado_ts_function' );
 
 function jado_load_styles() {
     include(plugin_dir_path( __FILE__ ) . 'inc/functions.php' );
-};
-
+}
 add_action( 'wp_enqueue_scripts', 'jado_load_styles' );
 
 
 
+function jado_custom_admin() {
+    echo '<style>
+        #swiper-slider-options .postbox-header{
+            background-color: #1d2327; color: white;
+            }
+            #swiper-slider-options .postbox-header h2{
+            font-size: 120%;
+            font-weight: normal;
+            }
+            
+            #swiper-slider-options .form-table tr{
+                border-bottom: 1px solid #dee1e3;
+            }
+            </style>';
+}
+add_action('admin_head', 'jado_custom_admin');
 
 
 
