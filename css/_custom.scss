@@ -30,7 +30,7 @@
 }
 
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
-  bottom: 0 !important;
+  bottom: 0.5em !important;
 }
 
 .swiper-button-prev, .swiper-button-next{
@@ -38,3 +38,4 @@
   border: none;
   outline: none;
 }
+
