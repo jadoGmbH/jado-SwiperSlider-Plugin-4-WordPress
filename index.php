@@ -226,7 +226,6 @@ function jado_load_styles() {
 add_action( 'wp_enqueue_scripts', 'jado_load_styles' );
 
 
-
 function jado_custom_admin() {
     echo '<style>
         #swiper-slider-options .postbox-header{
@@ -236,7 +235,6 @@ function jado_custom_admin() {
             font-size: 120%;
             font-weight: normal;
             }
-            
             #swiper-slider-options .form-table tr{
                 border-bottom: 1px solid #dee1e3;
             }

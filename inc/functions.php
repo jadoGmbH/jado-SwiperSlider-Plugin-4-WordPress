@@ -106,7 +106,7 @@ function ts_scripte()
         <?php
         $tsNavigationColor = get_post_meta(get_the_ID(), 'ts_options_navigation-color', true);
         if($tsNavigationColor != ''){
-                echo '<style>:root {--swiper-theme-color: ' . $tsNavigationColor . ';}</style>';
+                echo '<style>:root {--swiper-theme-color: ' . $tsNavigationColor . ';}.swiper-pagination-bullet{background-color: '. $tsNavigationColor .'; }</style>';
         }
     };
 }
