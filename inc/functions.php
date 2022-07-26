@@ -29,7 +29,7 @@ function ts_scripte()
                 const swiperElem = '<div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
                 let galleries = document.querySelectorAll('.wp-block-gallery');
                 for (let i = 0; i < galleries.length; i++) {
-                    galleries[i].classList.add('test');
+                    //galleries[i].classList.add('test');
                     org_gal = galleries[i].innerHTML;
                     new_gal = "<div class='swiper-wrapper'>" + org_gal + "</div>";
                     galleries[i].innerHTML = new_gal + swiperElem;
