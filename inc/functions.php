@@ -7,7 +7,9 @@ function ts_scripte()
         $tsSlidesViewport = get_post_meta(get_the_ID(), 'ts_options_how-much-slides-in-viewport', true);
         $tsArrows = get_post_meta(get_the_ID(), 'ts_options_show-navigation-arrows', true);
         $tsNavigation = get_post_meta(get_the_ID(), 'ts_options_navigation', true);
+        $tsNavigationArrows = get_post_meta(get_the_ID(), 'ts_options_arrows', true);
         $tsArrowSize = get_post_meta(get_the_ID(), 'ts_options_arrowsize', true);
+        $tsNavigationColor = get_post_meta(get_the_ID(), 'ts_options_navigation-color', true);
         $tsAnimationSpeed = get_post_meta(get_the_ID(), 'ts_options_animation-speed-ms', true);
         $tsBehavior = get_post_meta(get_the_ID(), 'ts_options_behavior', true);
         $tsLazyload = get_post_meta(get_the_ID(), 'ts_options_lazyload', true);
@@ -105,19 +107,38 @@ function ts_scripte()
             };
         </script>
         <?php
-        $tsNavigationColor = get_post_meta(get_the_ID(), 'ts_options_navigation-color', true);
         if ($tsNavigationColor != '') {
             echo '<style>';
-            echo ':root {--swiper-theme-color: ' . $tsNavigationColor . ';}.swiper-pagination-bullet{background-color: ' . $tsNavigationColor . '; }';
-            if ($tsArrowSize == '0') {
-                echo '.swiper-button-prev:after, .swiper-button-next:after{display: none;}';
-            } else {
-                echo '.swiper-button-prev:after, .swiper-button-next:after{font-size: ' . $tsArrowSize . ';';
-            }
+            echo ':root {--swiper-theme-color: ' . $tsNavigationColor . ';}.swiper-pagination-bullet{background-color: ' . $tsNavigationColor . ';}.swiper-pagination-fraction{color: ' . $tsNavigationColor . '};';
             echo '</style>';
-
-
         }
+
+        if ($tsArrowSize == '0') {
+            echo '<style>';
+            echo '.swiper-button-prev:after, .swiper-button-next:after{display: none;}';
+            echo '</style>';
+        } else {
+            echo '<style>';
+            echo '.swiper-button-prev:after, .swiper-button-next:after{font-size: ' . $tsArrowSize . '}';
+            echo '.swiper-pagination-bullet{width: calc( ' . $tsArrowSize . ' / 2.5) !important; height: calc( ' . $tsArrowSize . ' / 2.5) !important}';
+            //echo ' .swiper-pagination-current, .swiper-pagination-total{font-size: calc( ' . $tsArrowSize . ' / 2) !important;}';
+            echo '</style>';
+        }
+
+        if($tsNavigationArrows == 'triangle'){
+            echo '<style>';
+            echo '.swiper-button-prev:after, .swiper-button-next:after{font-family: "swiperIcons";}';
+           echo '.swiper-button-prev:after{content: "a";}';
+           echo '.swiper-button-next:after{content: "b";}';
+            echo '</style>';
+        }elseif($tsNavigationArrows == 'none'){
+            echo '<style>';
+            echo '.swiper-button-prev:after, .swiper-button-next:after{display: none;}';
+            echo '</style>';
+        }
+
+
+
     };
 }
 
