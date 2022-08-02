@@ -83,14 +83,13 @@
 }
 
 .swiper-button-prev{
-  @include transition(all 200ms ease-out);
   &:hover{
     margin-left: -0.2em;
   }
 }
 
+
 .swiper-button-next{
-  @include transition(all 200ms ease-out);
   &:hover{
     margin-right: -0.2em;
   }
