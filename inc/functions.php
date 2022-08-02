@@ -171,7 +171,7 @@ function ts_scripte()
         if ($tsNavigationArrows == 'triangle') {
             echo '<style>';
             echo '.swiper-button-prev:after, .swiper-button-next:after{font-family: "swiperIcons";}';
-            echo '.swiper-button-prev:after{content: "a";}';
+            echo '.swiper-button-prev:after{content: "a"; position: relative; left: 0.5em;}';
             echo '.swiper-button-next:after{content: "b";}';
             echo '</style>';
         } elseif ($tsNavigationArrows == 'none') {
