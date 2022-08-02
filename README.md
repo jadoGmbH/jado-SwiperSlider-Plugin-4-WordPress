@@ -5,13 +5,14 @@ A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each pag
 
 <h3>Key Feature: Only output scripts/styles on posts/pages where slideshow is activated</h3>
 
+<h3>New Feature Versions 1.1.0: Navigation with thumbnails added</h3>
 
 
 <h2>With many options:</h2>
 
 <ul>
 
-<li>Navigation: <strong>Bullets or numbers or none</strong></li>
+<li>Navigation: <strong>Bullets, numbers, thumbnails or none</strong></li>
 <li>Slides per View: <strong>type 'auto' or any number</strong></li>
 <li>Allow Keybord Control: <strong>to give access to the arrows of your keyboard to navigate</strong></li>
 <li>Animation Speed: <strong>Add Number to edit speed - default is 400ms</strong></li>

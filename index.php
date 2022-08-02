@@ -3,7 +3,7 @@
 Plugin Name: ja.do Swiper Plugin
 Plugin URI: https://www.ja.do/
 Description: Plugin for SwiperJS - transfers gallery-block into SwiperJS
-Version: 1.0.3
+Version: 1.1.0
 Author: ja.do GmbH
 Author URI: https://www.ja.do/
 License: MIT
@@ -13,9 +13,8 @@ Text Domain: jado
 
 function jado_ts_function() {
 
-    class TinySlider_Options {
-        private $config = '{"title":"Swiper Slider Options","prefix":"ts_options_","domain":"ts-options","class_name":"Swiper_Options","post-type":["post","page"],"context":"normal","priority":"default","fields":[{"type":"checkbox","label":"Swiper on this page","description":"activate all gallery-blocks as Swiper","id":"ts_options_activate-tiny-slider-on-this-page"},{"type":"select","label":"Navigation < >","default":"arrows","options":"none : None\r\narrows : Arrows\r\ntriangle : Triangles","id":"ts_options_arrows"},{"type":"select","label":"Navigation bottom","default":"none","options":"none : None\r\nbullets : Bullets\r\nnumbers : Numbers","id":"ts_options_navigation"},{"type":"text","label":"Slides per View (auto / num)","default":"1","max":"7","min":"1","step":"1","id":"ts_options_how-much-slides-in-viewport"},{"type":"checkbox","label":"Allow keyboard control","checked":"1","id":"ts_options_show-navigation-arrows"},{"type":"text","label":"Arrow/Bullet-Size <br><small> (Example: 0 = none, 1em, 2vw)</small>","default":"2em","max":"100","min":"0","id":"ts_options_arrowsize"},{"type":"number","label":"Animation speed (ms)","default":"400","max":"10000","min":"100","id":"ts_options_animation-speed-ms"},{"type":"select","label":"Behavior","default":"slide","options":"slide : Slide\r\ncube : Cube\r\nfade : Fade\r\ncards : Cards\r\ncoverflow : Coverflow","id":"ts_options_behavior"},{"type":"color","label":"Navigation/UI color","default":"#000000","color-picker":"1","id":"ts_options_navigation-color"},{"type":"checkbox","label":"Autoplay","id":"ts_options_autoplay"},{"type":"number","label":"Autoplay duration (ms)","default":"1000","max":"30000","min":"10","id":"ts_options_autoplayduration"},{"type":"checkbox","label":"Auto height","checked":"1","id":"ts_options_auto-height"},{"type":"checkbox","label":"Loop","checked":"1","id":"ts_options_loop"},{"type":"number","label":"Space between","max":"1000","min":"1","step":"1","id":"ts_options_gutter"},{"type":"checkbox","label":"Lazyload","id":"ts_options_lazyload"}]}';
-
+    class SwiperSlider_Options {
+        private $config = '{"title":"Swiper Slider Options","prefix":"ts_options_","domain":"ts-options","class_name":"Swiper_Options","post-type":["post","page","hochzeit"],"context":"normal","priority":"default","fields":[{"type":"checkbox","label":"Swiper on this page","description":"activate all gallery-blocks as Swiper","id":"ts_options_activate-tiny-slider-on-this-page"},{"type":"select","label":"Navigation < >","default":"arrows","options":"none : None\r\narrows : Arrows\r\ntriangle : Triangles","id":"ts_options_arrows"},{"type":"select","label":"Navigation bottom","default":"none","options":"none : None\r\nbullets : Bullets\r\nnumbers : Numbers\r\nthumbnails : Thumbnails","id":"ts_options_navigation"},{"type":"text","label":"Slides per View (auto / num)","default":"1","max":"7","min":"1","step":"1","id":"ts_options_how-much-slides-in-viewport"},{"type":"checkbox","label":"Allow keyboard control","checked":"1","id":"ts_options_show-navigation-arrows"},{"type":"text","label":"Arrow/Bullet-Size <br><small> (Example: 0 = none, 1em, 2vw)</small>","default":"2em","max":"100","min":"0","id":"ts_options_arrowsize"},{"type":"number","label":"Animation speed (ms)","default":"400","max":"10000","min":"100","id":"ts_options_animation-speed-ms"},{"type":"select","label":"Behavior","default":"slide","options":"slide : Slide\r\ncube : Cube\r\nfade : Fade\r\ncards : Cards\r\ncoverflow : Coverflow","id":"ts_options_behavior"},{"type":"color","label":"Navigation/UI color","default":"#000000","color-picker":"1","id":"ts_options_navigation-color"},{"type":"checkbox","label":"Autoplay","id":"ts_options_autoplay"},{"type":"number","label":"Autoplay duration (ms)","default":"1000","max":"30000","min":"10","id":"ts_options_autoplayduration"},{"type":"checkbox","label":"Auto height","checked":"1","id":"ts_options_auto-height"},{"type":"checkbox","label":"Loop","checked":"1","id":"ts_options_loop"},{"type":"number","label":"Space between","max":"1000","min":"1","step":"1","id":"ts_options_gutter"},{"type":"number","label":"Space between thubmnails <br>(px if activated)","max":"200","min":"1","step":"1","id":"ts_options_gutterthumbs"},{"type":"number","label":"Thumbnails count <br>(if activated)","max":"50","min":"1","step":"1","id":"ts_options_countthumbs"},{"type":"checkbox","label":"Lazyload","id":"ts_options_lazyload"}]}';
 
         public function __construct() {
             $this->config = json_decode( $this->config, true );
@@ -213,8 +212,7 @@ function jado_ts_function() {
             return '';
         }
     }
-    new TinySlider_Options;
-
+    new SwiperSlider_Options;
 }
 
 add_action( 'init', 'jado_ts_function' );
@@ -228,7 +226,7 @@ add_action( 'wp_enqueue_scripts', 'jado_load_styles' );
 
 function jado_custom_admin() {
     echo '<style>
-        #swiper-slider-options .postbox-header{
+            #swiper-slider-options .postbox-header{
             background-color: #1d2327; color: white;
             }
             #swiper-slider-options .postbox-header h2{
