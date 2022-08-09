@@ -11,6 +11,11 @@ A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each pag
 
 <h2>With many options:</h2>
 
+![Swiper Slider settings](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/tutorial-swiper-slider.jpg "Tutorial Swiper Slider")
+
+
+
+
 <ul>
 
 <li>Navigation: <strong>Bullets, numbers, thumbnails or none</strong></li>
