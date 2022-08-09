@@ -5,8 +5,8 @@ A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each pag
 
 <h3>Key Feature: Only output scripts/styles on posts/pages where slideshow is activated</h3>
 
-<h3>New Feature Versions 1.1.0: Navigation with thumbnails added</h3>
-<h3>New Feature Versions 1.2.0: responsive height added</h3>
+<p>New Feature Versions 1.1.0: Navigation with thumbnails added</p>
+<p>New Feature Versions 1.2.0: responsive height added</p>
 
 
 <h2>With many options:</h2>
