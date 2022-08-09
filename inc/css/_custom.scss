@@ -95,9 +95,10 @@
 .swiper-button-prev, .swiper-button-next{
   top: 0 !important;
   height: 100% !important;
-  width: calc(50% - 1em)  !important;
+  //width: calc(50% - 1em)  !important;
   outline: none;
 }
+
 .swiper-button-prev{
   left: 0 !important;
   justify-content: left !important;
