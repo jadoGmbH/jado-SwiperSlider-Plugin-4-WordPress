@@ -39,4 +39,4 @@ A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each pag
 
 
 
-For better Documentation please have a look at https://swiperjs.com
+For a Live Preview click https://www.ja.do/swiper/ & for better documentation please have a look at https://swiperjs.com
