@@ -20,6 +20,10 @@ function ts_scripte()
         $tsGutterThumbs = get_post_meta(get_the_ID(), 'ts_options_gutterthumbs', true);
         $tsThumbCount = get_post_meta(get_the_ID(), 'ts_options_countthumbs', true);
         $tsAutoHeight = get_post_meta(get_the_ID(), 'ts_options_auto-height', true);
+        $tsRespHeight = get_post_meta(get_the_ID(), 'ts_options_respheight', true);
+        $tsRespHeightColor = get_post_meta(get_the_ID(), 'ts_options_respheightcolor', true);
+
+
         ?>
         <script src='<?php echo plugin_dir_url(__FILE__) . 'js/swiper-min.js'; ?>'></script>
         <?php
@@ -177,6 +181,18 @@ function ts_scripte()
         } elseif ($tsNavigationArrows == 'none') {
             echo '<style>';
             echo '.swiper-button-prev:after, .swiper-button-next:after{display: none;}';
+            echo '</style>';
+        }
+
+        if($tsRespHeight != ''){
+            echo '<style>';
+            echo '.wp-block-gallery.swiper-initialized{max-height: ' . $tsRespHeight . 'vh;}';
+            echo '.wp-block-gallery.swiper-initialized .swiper-wrapper{height: ' . $tsRespHeight . 'vh;}';
+            echo '.wp-block-gallery.swiper-initialized .swiper-slide img{height: ' . $tsRespHeight . 'vh !important; width: auto !important;}';
+            echo '.wp-block-gallery-thumbs .wp-block-image{max-height: ' . $tsRespHeight / 9 . 'vh;}';
+            if($tsRespHeightColor != '#dd4312'){
+                echo '.swiper-slide{background-color: ' . $tsRespHeightColor . ';}';
+            }
             echo '</style>';
         }
     };
