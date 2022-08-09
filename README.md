@@ -23,7 +23,10 @@ A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each pag
 <li>Auto Height: <strong>auto height of slider</strong></li>
 <li>Loop: <strong>Loop trough the slideshows</strong></li>
 <li>Space between: <strong>Set Space between slides</strong></li>
-<li>Navigation Color: <strong>Set Color for navigation Elements</strong></li>
+<li>Navigation color: <strong>Set Color for navigation Elements</strong></li>
+<li>Responsive height: <strong>Added "no crop"-mode if adding a value to this (% height)</strong></li>
+<li>Gallery background color: <strong>Set background color for gallery if responsive height is activated</strong></li>
+
 
 </ul>
 
