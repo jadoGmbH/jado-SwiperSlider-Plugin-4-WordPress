@@ -1,7 +1,7 @@
 # ja.do Swiper Slider Wordpress Plugin
 
 
-A WordPress Plugin that turns all gallery-blocks into a SwiperSlider on each page/post <strong>only where it is activated</strong>.
+A WordPress Plugin that turns all gallery-blocks on a page/post into a SwiperSlider <strong>only where it is activated</strong>.
 
 <h3>Key Feature: Only output scripts/styles on posts/pages where slideshow is activated</h3>
 
