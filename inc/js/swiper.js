@@ -1,5 +1,5 @@
 /**
- * Swiper 8.3.1
+ * Swiper 8.3.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 13, 2022
+ * Released on: July 26, 2022
  */
 
 !function (e, t) {
@@ -1029,12 +1029,15 @@
                     n = r.children(`.${s.slideClass}`)
                 }
             }
-            "auto" !== s.slidesPerView || s.loopedSlides || (s.loopedSlides = n.length), e.loopedSlides = Math.ceil(parseFloat(s.loopedSlides || s.slidesPerView, 10)), e.loopedSlides += s.loopAdditionalSlides, e.loopedSlides > n.length && (e.loopedSlides = n.length);
+            "auto" !== s.slidesPerView || s.loopedSlides || (s.loopedSlides = n.length), e.loopedSlides = Math.ceil(parseFloat(s.loopedSlides || s.slidesPerView, 10)), e.loopedSlides += s.loopAdditionalSlides, e.loopedSlides > n.length && e.params.loopedSlidesLimit && (e.loopedSlides = n.length);
             const l = [], o = [];
-            n.each(((t, s) => {
-                const a = d(t);
-                s < e.loopedSlides && o.push(t), s < n.length && s >= n.length - e.loopedSlides && l.push(t), a.attr("data-swiper-slide-index", s)
+            n.each(((e, t) => {
+                d(e).attr("data-swiper-slide-index", t)
             }));
+            for (let t = 0; t < e.loopedSlides; t += 1) {
+                const e = t - Math.floor(t / n.length) * n.length;
+                o.push(n.eq(e)[0]), l.unshift(n.eq(n.length - e - 1)[0])
+            }
             for (let e = 0; e < o.length; e += 1) r.append(d(o[e].cloneNode(!0)).addClass(s.slideDuplicateClass));
             for (let e = l.length - 1; e >= 0; e -= 1) r.prepend(d(l[e].cloneNode(!0)).addClass(s.slideDuplicateClass))
         }, loopFix: function () {
@@ -1319,6 +1322,7 @@
         loop: !1,
         loopAdditionalSlides: 0,
         loopedSlides: null,
+        loopedSlidesLimit: !0,
         loopFillGroupWithBlank: !1,
         loopPreventsSlide: !0,
         rewind: !1,
@@ -1354,7 +1358,7 @@
         }
     }
 
-    const _ = {
+    const q = {
         eventsEmitter: $, update: S, translate: M, transition: {
             setTransition: function (e, t) {
                 const s = this;
@@ -1459,7 +1463,7 @@
                 }
             }
         }
-    }, q = {};
+    }, _ = {};
 
     class V {
         constructor() {
@@ -1486,7 +1490,7 @@
                 })
             }));
             const l = g({}, W, n);
-            return r.params = g({}, l, q, t), r.originalParams = g({}, r.params), r.passedParams = g({}, t), r.params && r.params.on && Object.keys(r.params.on).forEach((e => {
+            return r.params = g({}, l, _, t), r.originalParams = g({}, r.params), r.passedParams = g({}, t), r.params && r.params.on && Object.keys(r.params.on).forEach((e => {
                 r.on(e, r.params.on[e])
             })), r.params && r.params.onAny && r.onAny(r.params.onAny), r.$ = d, Object.assign(r, {
                 enabled: r.params.enabled,
@@ -1690,11 +1694,11 @@
         }
 
         static extendDefaults(e) {
-            g(q, e)
+            g(_, e)
         }
 
         static get extendedDefaults() {
-            return q
+            return _
         }
 
         static get defaults() {
@@ -1846,9 +1850,9 @@
         return r.length || (r = d(`<div class="swiper-slide-shadow${s ? `-${s}` : ""}"></div>`), i.append(r)), r
     }
 
-    Object.keys(_).forEach((e => {
-        Object.keys(_[e]).forEach((t => {
-            V.prototype[t] = _[e][t]
+    Object.keys(q).forEach((e => {
+        Object.keys(q[e]).forEach((t => {
+            V.prototype[t] = q[e][t]
         }))
     })), V.use([function (e) {
         let {swiper: t, on: s, emit: a} = e;
@@ -3026,7 +3030,7 @@
             if (!s || !t.slides.includes(s)) return;
             const a = t.slides.indexOf(s) === t.activeIndex,
                 i = t.params.watchSlidesProgress && t.visibleSlides && t.visibleSlides.includes(s);
-            a || i || t.slideTo(t.slides.indexOf(s), 0)
+            a || i || (t.isHorizontal() ? t.el.scrollLeft = 0 : t.el.scrollTop = 0, t.slideTo(t.slides.indexOf(s), 0))
         }, b = () => {
             const e = t.params.a11y;
             e.itemRoleDescriptionMessage && c(d(t.slides), e.itemRoleDescriptionMessage), e.slideRole && o(d(t.slides), e.slideRole);
@@ -3176,6 +3180,7 @@
         let t, {swiper: s, extendParams: i, on: r, emit: n} = e;
 
         function l() {
+            if (!s.size) return s.autoplay.running = !1, void (s.autoplay.paused = !1);
             const e = s.slides.eq(s.activeIndex);
             let a = s.params.autoplay.delay;
             e.attr("data-swiper-autoplay") && (a = e.attr("data-swiper-autoplay") || s.params.autoplay.delay), clearTimeout(t), t = p((() => {
