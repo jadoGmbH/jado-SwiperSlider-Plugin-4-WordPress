@@ -10,7 +10,7 @@ Swiper Slider = https://swiperjs.com
 
 <h3>Mobile touch friendly - responsive if you want - fast & easy with many setting options</h3>
 
-![Swiper Slider settings](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/tutorial-swiper-slider.jpg "Tutorial Swiper Slider")
+![Swiper Slider settings](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/assets/tutorial-swiper-slider.jpg "Tutorial Swiper Slider")
 
 
 <ul>
@@ -33,7 +33,7 @@ Swiper Slider = https://swiperjs.com
 </ul>
 
 
-![Swiper Slider preview](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/swiper-slider-gallery.jpg "Preview Swiper Slider")
+![Swiper Slider preview](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/assets/swiper-slider-gallery.jpg "Preview Swiper Slider")
 
 
 
