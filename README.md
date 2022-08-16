@@ -35,6 +35,8 @@ Swiper Slider = https://swiperjs.com
 
 ![Swiper Slider preview](https://raw.githubusercontent.com/jadoGmbH/jado-SwiperSlider-Plugin-4-WordPress/main/assets/swiper-slider-gallery.jpg "Preview Swiper Slider")
 
-Example usage: https://vimeo.com/739954272
-Live preview: https://www.ja.do/swiper/
-Better documentation & information: https://swiperjs.com
+<ul>
+<li>Example usage: https://vimeo.com/739954272</li>
+<li>Live preview: https://www.ja.do/swiper/</li>
+<li>Better documentation & information: https://swiperjs.com</li>
+</ul>
