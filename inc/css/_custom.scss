@@ -75,6 +75,8 @@
   .swiper-slide{
     margin-bottom: 0;
     margin-right: 0;
+    -webkit-backface-visibility: hidden; // safari flickering
+    -webkit-transform: translate3d(0, 0, 0); // safari flickering
 
     figcaption{
       padding-bottom: 2em !important;
