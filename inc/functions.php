@@ -188,7 +188,7 @@ function ts_scripte()
             echo '<style>';
             echo '.wp-block-gallery.swiper-initialized{max-height: ' . $tsRespHeight . 'vh;}';
             echo '.wp-block-gallery.swiper-initialized .swiper-wrapper{height: ' . $tsRespHeight . 'vh;}';
-            echo '.wp-block-gallery.swiper-initialized .swiper-slide img{height: ' . $tsRespHeight . 'vh !important; width: auto !important;}';
+            //echo '.wp-block-gallery.swiper-initialized .swiper-slide img{height: ' . $tsRespHeight . 'vh !important; width: auto !important;}';
             echo '.wp-block-gallery-thumbs .wp-block-image{max-height: ' . $tsRespHeight / 9 . 'vh;}';
             if($tsRespHeightColor != '#dd4312'){
                 echo '.swiper-slide{background-color: ' . $tsRespHeightColor . ';}';
