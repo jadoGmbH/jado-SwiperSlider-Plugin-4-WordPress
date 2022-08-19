@@ -5,6 +5,7 @@ A WordPress Plugin that turns all gallery-blocks into a Swiper Slider <strong>on
 
 Swiper Slider = https://swiperjs.com
 
+<p>New feature in Version 1.2.1: responsive height fix</p>
 <p>New feature in Version 1.2.0: responsive height added & Swiper 8.3.2</p>
 <p>New feature in version 1.1.0: Navigation with thumbnails added</p>
 
