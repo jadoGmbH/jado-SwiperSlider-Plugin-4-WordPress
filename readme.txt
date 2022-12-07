@@ -4,7 +4,7 @@ Donate link: https://nolimits4web.com
 Tags: swiperJS, slideshow, slider, swiper
 Requires at least: 5.0
 Tested up to: 6.0.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,8 @@ SwiperJS Slider/Carousel with many option settings. Simple to use and very fast.
 
 == Changelog ==
 
+= 1.2.2 =
+* css improvements
 
 = 1.2.1 =
 * responsive height fix mobile
