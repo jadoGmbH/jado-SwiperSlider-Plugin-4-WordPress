@@ -78,9 +78,6 @@
     -webkit-backface-visibility: hidden; // safari flickering
     -webkit-transform: translate3d(0, 0, 0); // safari flickering
 
-    figcaption{
-      padding-bottom: 2em !important;
-    }
     img{
       margin-bottom: 0 !important;
     }
@@ -104,6 +101,7 @@
   left: 0 !important;
   justify-content: left !important;
   padding-left: 1em;
+  @include transition(all 0.2s ease);
 
   &:after{
     text-shadow: 0 0 0.2em rgba(0,0,0,0.5);
@@ -117,6 +115,7 @@
   right: 0 !important;
   justify-content: right !important;
   padding-right: 1em;
+  @include transition(all 0.2s ease);
 
   &:after{
     text-shadow: 0 0 0.2em rgba(0,0,0,0.5);

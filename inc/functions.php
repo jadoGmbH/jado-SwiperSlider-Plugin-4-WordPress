@@ -168,7 +168,7 @@ function ts_scripte()
         } else {
             echo '<style>';
             echo '.swiper-button-prev:after, .swiper-button-next:after{font-size: ' . $tsArrowSize . '}';
-            echo '.swiper-pagination-bullet{width: calc( ' . $tsArrowSize . ' / 2.5) !important; height: calc( ' . $tsArrowSize . ' / 2.5) !important}';
+            echo '.swiper-pagination-bullet{width: calc( ' . $tsArrowSize . ' / 3.3) !important; height: calc( ' . $tsArrowSize . ' / 3.3) !important}';
             //echo ' .swiper-pagination-current, .swiper-pagination-total{font-size: calc( ' . $tsArrowSize . ' / 2) !important;}';
             echo '</style>';
         }
