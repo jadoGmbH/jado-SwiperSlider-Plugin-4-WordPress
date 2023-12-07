@@ -1,10 +1,11 @@
-# ja.do Swiper Slider Wordpress Plugin
+# jado Swiper Slider Wordpress Plugin
 
 
 A WordPress Plugin that turns all gallery-blocks into a Swiper Slider <strong>only when it is activated on this page/post</strong>.
 
 Swiper Slider = https://swiperjs.com
 
+<p>New feature in Version 1.2.3: optimisations</p>
 <p>New feature in Version 1.2.2: css improvements</p>
 <p>New feature in Version 1.2.1: responsive height fix</p>
 <p>New feature in Version 1.2.0: responsive height added & Swiper 8.3.2</p>
