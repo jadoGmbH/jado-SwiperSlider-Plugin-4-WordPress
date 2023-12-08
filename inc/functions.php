@@ -2,26 +2,26 @@
 add_action('wp_footer', 'ts_scripte');
 function ts_scripte()
 {
-    $tsActive = get_post_meta(get_the_ID(), 'ts_options_activate-tiny-slider-on-this-page', true);
+    $tsActive = get_post_meta(get_the_ID(), 'jado_swiperjs_activate-tiny-slider-on-this-page', true);
     if ($tsActive == true) {
-        $tsSlidesViewport = get_post_meta(get_the_ID(), 'ts_options_how-much-slides-in-viewport', true);
-        $tsArrows = get_post_meta(get_the_ID(), 'ts_options_show-navigation-arrows', true);
-        $tsNavigation = get_post_meta(get_the_ID(), 'ts_options_navigation', true);
-        $tsNavigationArrows = get_post_meta(get_the_ID(), 'ts_options_arrows', true);
-        $tsArrowSize = get_post_meta(get_the_ID(), 'ts_options_arrowsize', true);
-        $tsNavigationColor = get_post_meta(get_the_ID(), 'ts_options_navigation-color', true);
-        $tsAnimationSpeed = get_post_meta(get_the_ID(), 'ts_options_animation-speed-ms', true);
-        $tsBehavior = get_post_meta(get_the_ID(), 'ts_options_behavior', true);
-        $tsLazyload = get_post_meta(get_the_ID(), 'ts_options_lazyload', true);
-        $tsAutoplay = get_post_meta(get_the_ID(), 'ts_options_autoplay', true);
-        $tsAutoplayduration = get_post_meta(get_the_ID(), 'ts_options_autoplayduration', true);
-        $tsLoop = get_post_meta(get_the_ID(), 'ts_options_loop', true);
-        $tsGutter = get_post_meta(get_the_ID(), 'ts_options_gutter', true);
-        $tsGutterThumbs = get_post_meta(get_the_ID(), 'ts_options_gutterthumbs', true);
-        $tsThumbCount = get_post_meta(get_the_ID(), 'ts_options_countthumbs', true);
-        $tsAutoHeight = get_post_meta(get_the_ID(), 'ts_options_auto-height', true);
-        $tsRespHeight = get_post_meta(get_the_ID(), 'ts_options_respheight', true);
-        $tsRespHeightColor = get_post_meta(get_the_ID(), 'ts_options_respheightcolor', true);
+        $tsSlidesViewport = get_post_meta(get_the_ID(), 'jado_swiperjs_how-much-slides-in-viewport', true);
+        $tsArrows = get_post_meta(get_the_ID(), 'jado_swiperjs_show-navigation-arrows', true);
+        $tsNavigation = get_post_meta(get_the_ID(), 'jado_swiperjs_navigation', true);
+        $tsNavigationArrows = get_post_meta(get_the_ID(), 'jado_swiperjs_arrows', true);
+        $tsArrowSize = get_post_meta(get_the_ID(), 'jado_swiperjs_arrowsize', true);
+        $tsNavigationColor = get_post_meta(get_the_ID(), 'jado_swiperjs_navigation-color', true);
+        $tsAnimationSpeed = get_post_meta(get_the_ID(), 'jado_swiperjs_animation-speed-ms', true);
+        $tsBehavior = get_post_meta(get_the_ID(), 'jado_swiperjs_behavior', true);
+        $tsLazyload = get_post_meta(get_the_ID(), 'jado_swiperjs_lazyload', true);
+        $tsAutoplay = get_post_meta(get_the_ID(), 'jado_swiperjs_autoplay', true);
+        $tsAutoplayduration = get_post_meta(get_the_ID(), 'jado_swiperjs_autoplayduration', true);
+        $tsLoop = get_post_meta(get_the_ID(), 'jado_swiperjs_loop', true);
+        $tsGutter = get_post_meta(get_the_ID(), 'jado_swiperjs_gutter', true);
+        $tsGutterThumbs = get_post_meta(get_the_ID(), 'jado_swiperjs_gutterthumbs', true);
+        $tsThumbCount = get_post_meta(get_the_ID(), 'jado_swiperjs_countthumbs', true);
+        $tsAutoHeight = get_post_meta(get_the_ID(), 'jado_swiperjs_auto-height', true);
+        $tsRespHeight = get_post_meta(get_the_ID(), 'jado_swiperjs_respheight', true);
+        $tsRespHeightColor = get_post_meta(get_the_ID(), 'jado_swiperjs_respheightcolor', true);
 
 
         ?>
@@ -168,7 +168,7 @@ function ts_scripte()
         } else {
             echo '<style>';
             echo '.swiper-button-prev:after, .swiper-button-next:after{font-size: ' . $tsArrowSize . '}';
-            echo '.swiper-pagination-bullet{width: calc( ' . $tsArrowSize . ' / 3.3) !important; height: calc( ' . $tsArrowSize . ' / 3.3) !important}';
+            echo '.swiper-pagination-bullet{width: calc( ' . $tsArrowSize . ' / 5) !important; height: calc( ' . $tsArrowSize . ' / 5) !important}';
             //echo ' .swiper-pagination-current, .swiper-pagination-total{font-size: calc( ' . $tsArrowSize . ' / 2) !important;}';
             echo '</style>';
         }

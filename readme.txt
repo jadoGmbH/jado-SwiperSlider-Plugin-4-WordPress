@@ -1,15 +1,15 @@
 === Plugin Name ===
-Contributors: @jadogmbh, @nolimits4web 
+Contributors: @jadogmbh, @nolimits4web
 Donate link: https://nolimits4web.com
-Tags: swiperJS, slideshow, slider, swiper
+Tags: swiperJS, slideshow, slider, swiper, gutenberg, gallery
 Requires at least: 5.0
-Tested up to: 6.0.1
-Stable tag: 1.2.2
+Tested up to: 6.4.2
+Stable tag: 1.2.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress Plugin that turns all gallery-blocks into a Swiper Slider only when it is activated on page/post.
+A WordPress plugin that turns all gallery-blocks into a Swiper Slider only when it is activated on page/post.
 
 == Description ==
 
@@ -22,6 +22,9 @@ SwiperJS Slider/Carousel with many option settings. Simple to use and very fast.
 2. Preview: swiper-slider-gallery.jpg
 
 == Changelog ==
+
+= 1.2.3 =
+* optimisations and js updated
 
 = 1.2.2 =
 * css improvements

@@ -1,7 +1,7 @@
-# jado Swiper Slider Wordpress Plugin
+# jado SwiperJS Gallery 
 
 
-A WordPress Plugin that turns all gallery-blocks into a Swiper Slider <strong>only when it is activated on this page/post</strong>.
+A WordPress plugin that turns all gutenberg gallery blocks into a Swiper Slider <strong>only when it is activated on this page/post</strong>.
 
 Swiper Slider = https://swiperjs.com
 
@@ -19,7 +19,7 @@ Swiper Slider = https://swiperjs.com
 <ul>
 
 <li>Navigation: <strong>Bullets, numbers, thumbnails or none</strong></li>
-<li>Slides per View: <strong>type 'auto' or any number</strong></li>
+<li>Slides per view: <strong>type 'auto' or any number</strong></li>
 <li>Allow Keybord Control: <strong>to give access to the arrows of your keyboard to navigate</strong></li>
 <li>Animation Speed: <strong>Add Number to edit speed - default is 400ms</strong></li>
 <li>Behavior: <strong>Slide (default), Cube, Fade, Cards or Coverflow</strong></li>
