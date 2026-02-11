@@ -2,26 +2,28 @@
 add_action('wp_footer', 'ts_scripte');
 function ts_scripte()
 {
-    $tsActive = get_post_meta(get_the_ID(), 'jado_swiperjs_activate-tiny-slider-on-this-page', true);
-    if ($tsActive == true) {
-        $tsSlidesViewport = get_post_meta(get_the_ID(), 'jado_swiperjs_how-much-slides-in-viewport', true);
-        $tsArrows = get_post_meta(get_the_ID(), 'jado_swiperjs_show-navigation-arrows', true);
-        $tsNavigation = get_post_meta(get_the_ID(), 'jado_swiperjs_navigation', true);
-        $tsNavigationArrows = get_post_meta(get_the_ID(), 'jado_swiperjs_arrows', true);
-        $tsArrowSize = get_post_meta(get_the_ID(), 'jado_swiperjs_arrowsize', true);
-        $tsNavigationColor = get_post_meta(get_the_ID(), 'jado_swiperjs_navigation-color', true);
-        $tsAnimationSpeed = get_post_meta(get_the_ID(), 'jado_swiperjs_animation-speed-ms', true);
-        $tsBehavior = get_post_meta(get_the_ID(), 'jado_swiperjs_behavior', true);
-        $tsLazyload = get_post_meta(get_the_ID(), 'jado_swiperjs_lazyload', true);
-        $tsAutoplay = get_post_meta(get_the_ID(), 'jado_swiperjs_autoplay', true);
-        $tsAutoplayduration = get_post_meta(get_the_ID(), 'jado_swiperjs_autoplayduration', true);
-        $tsLoop = get_post_meta(get_the_ID(), 'jado_swiperjs_loop', true);
-        $tsGutter = get_post_meta(get_the_ID(), 'jado_swiperjs_gutter', true);
-        $tsGutterThumbs = get_post_meta(get_the_ID(), 'jado_swiperjs_gutterthumbs', true);
-        $tsThumbCount = get_post_meta(get_the_ID(), 'jado_swiperjs_countthumbs', true);
-        $tsAutoHeight = get_post_meta(get_the_ID(), 'jado_swiperjs_auto-height', true);
-        $tsRespHeight = get_post_meta(get_the_ID(), 'jado_swiperjs_respheight', true);
-        $tsRespHeightColor = get_post_meta(get_the_ID(), 'jado_swiperjs_respheightcolor', true);
+    if (is_admin()) { return; }
+    $post_id = get_queried_object_id();
+
+    // Lese Optionen kontextabhängig; falls keine vorhanden, greifen Defaults im JS weiter unten
+    $tsSlidesViewport   = $post_id ? get_post_meta($post_id, 'ts_options_how-much-slides-in-viewport', true) : '';
+    $tsArrows           = $post_id ? get_post_meta($post_id, 'ts_options_show-navigation-arrows', true) : '';
+    $tsNavigation       = $post_id ? get_post_meta($post_id, 'ts_options_navigation', true) : '';
+    $tsNavigationArrows = $post_id ? get_post_meta($post_id, 'ts_options_arrows', true) : '';
+    $tsArrowSize        = $post_id ? get_post_meta($post_id, 'ts_options_arrowsize', true) : '';
+    $tsNavigationColor  = $post_id ? get_post_meta($post_id, 'ts_options_navigation-color', true) : '';
+    $tsAnimationSpeed   = $post_id ? get_post_meta($post_id, 'ts_options_animation-speed-ms', true) : '';
+    $tsBehavior         = $post_id ? get_post_meta($post_id, 'ts_options_behavior', true) : '';
+    $tsLazyload         = $post_id ? get_post_meta($post_id, 'ts_options_lazyload', true) : '';
+    $tsAutoplay         = $post_id ? get_post_meta($post_id, 'ts_options_autoplay', true) : '';
+    $tsAutoplayduration = $post_id ? get_post_meta($post_id, 'ts_options_autoplayduration', true) : '';
+    $tsLoop             = $post_id ? get_post_meta($post_id, 'ts_options_loop', true) : '';
+    $tsGutter           = $post_id ? get_post_meta($post_id, 'ts_options_gutter', true) : '';
+    $tsGutterThumbs     = $post_id ? get_post_meta($post_id, 'ts_options_gutterthumbs', true) : '';
+    $tsThumbCount       = $post_id ? get_post_meta($post_id, 'ts_options_countthumbs', true) : '';
+    $tsAutoHeight       = $post_id ? get_post_meta($post_id, 'ts_options_auto-height', true) : '';
+    $tsRespHeight       = $post_id ? get_post_meta($post_id, 'ts_options_respheight', true) : '';
+    $tsRespHeightColor  = $post_id ? get_post_meta($post_id, 'ts_options_respheightcolor', true) : '';
 
 
         ?>
@@ -29,46 +31,54 @@ function ts_scripte()
         <?php
         if ($tsNavigation == 'thumbnails') { ?>
             <script>
-                let galElem = document.querySelectorAll('figure.wp-block-gallery');
-                for (let i = 0; i < galElem.length; i++) {
-                    let clone = galElem[i].cloneNode(true);
-                    clone.className = '';
-                    clone.setAttribute('thumbsslider', '');
-                    clone.classList.add('wp-block-gallery-thumbs');
-                    galElem[i].after(clone);
-                }
+              (function(){
+                var onReady=function(fn){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn);}else{fn();}};
+                onReady(function(){
+                  let galElem = document.querySelectorAll('.wp-block-gallery');
+                  for (let i = 0; i < galElem.length; i++) {
+                      let clone = galElem[i].cloneNode(true);
+                      clone.className = '';
+                      clone.setAttribute('thumbsslider', '');
+                      clone.classList.add('wp-block-gallery-thumbs');
+                      galElem[i].after(clone);
+                  }
+                });
+              })();
             </script>
             <?php
         } ?>
 
         <script>
-            let loadStyle = document.createElement('link');
-            let pluginUrl = '<?php echo plugin_dir_url(__FILE__); ?>';
-            loadStyle.rel = 'stylesheet';
-            loadStyle.href = pluginUrl + 'css/swiper.css';
-            loadStyle.type = 'text/css';
-            let linkInput = document.getElementsByTagName('link')[0];
-            linkInput.parentNode.insertBefore(loadStyle, linkInput);
+          (function(){
+            var onReady=function(fn){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn);}else{fn();}};
+            onReady(function(){
+              let loadStyle = document.createElement('link');
+              let pluginUrl = '<?php echo plugin_dir_url(__FILE__); ?>';
+              loadStyle.rel = 'stylesheet';
+              loadStyle.href = pluginUrl + 'css/swiper.css';
+              loadStyle.type = 'text/css';
+              let linkInput = document.getElementsByTagName('link')[0];
+              if (linkInput && linkInput.parentNode) { linkInput.parentNode.insertBefore(loadStyle, linkInput); }
 
-            let galleryWrap = document.querySelectorAll('figure.wp-block-gallery, figure.wp-block-gallery-thumbs');
-            for (let i = 0; i < galleryWrap.length; i++) {
-                orgGal = galleryWrap[i].innerHTML;
-                newGal = "<div class='swiper-wrapper'>" + orgGal + "</div>";
-                galleryWrap[i].innerHTML = newGal;
-            }
+              let galleryWrap = document.querySelectorAll('.wp-block-gallery, .wp-block-gallery-thumbs');
+              for (let i = 0; i < galleryWrap.length; i++) {
+                  var orgGal = galleryWrap[i].innerHTML;
+                  var newGal = "<div class='swiper-wrapper'>" + orgGal + "</div>";
+                  galleryWrap[i].innerHTML = newGal;
+              }
 
-            const swiperElem = '<div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
+              const swiperElem = '<div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
 
-            let mainGal = document.querySelectorAll('figure.wp-block-gallery');
-            for (let i = 0; i < mainGal.length; i++) {
-                galWithWrap = mainGal[i].innerHTML;
-                mainGal[i].innerHTML = galWithWrap + swiperElem;
-            }
+              let mainGal = document.querySelectorAll('.wp-block-gallery');
+              for (let i = 0; i < mainGal.length; i++) {
+                  var galWithWrap = mainGal[i].innerHTML;
+                  mainGal[i].innerHTML = galWithWrap + swiperElem;
+              }
 
-            let galImages = document.querySelectorAll('figure.wp-block-gallery .wp-block-image, figure.wp-block-gallery-thumbs .wp-block-image');
-            for (let i = 0; i < galImages.length; i++) {
-                galImages[i].classList.add('swiper-slide');
-            }
+              let galImages = document.querySelectorAll('.wp-block-gallery .wp-block-image, .wp-block-gallery-thumbs .wp-block-image');
+              for (let i = 0; i < galImages.length; i++) {
+                  galImages[i].classList.add('swiper-slide');
+              }
 
             <?php
             if ($tsNavigation == 'thumbnails') { ?>
@@ -154,6 +164,8 @@ function ts_scripte()
                 }
                 ?>
             });
+            });
+          })();
         </script>
         <?php
         if ($tsNavigationColor != '') {
@@ -195,6 +207,6 @@ function ts_scripte()
             }
             echo '</style>';
         }
-    };
-}
+
+    }
 
